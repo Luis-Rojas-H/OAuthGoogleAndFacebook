@@ -67,7 +67,10 @@ passport.use(
                 }else{
                     // if not, create user in our DB
                     new User({
+                        firstName: profile.name.givenName,
+                        lastName: profile.name.familyName,
                         age: 41,
+                        email: "hols@hot.dk",
                         role: "9null9",
                         facebookId: profile.id,
                     }).save().then((newUser) => {
